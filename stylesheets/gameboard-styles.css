@@ -1,0 +1,660 @@
+/* GameCanvas Styles */
+#gameBoardContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+/* square-Canvas Styles */
+#squareGameContainer {
+    position: relative;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    width: calc(300px + 25vw);
+    height: calc(300px + 25vw);
+    border: solid 1px rgba(150,0,150,0.7);
+    border-bottom-left-radius: 25px;
+}
+#squareCanvas {
+    position: absolute;
+    display: grid;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.5);
+    border: solid 0.5px rgba(250,0,0,0.3);
+    width: 95%;
+    height: 95%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+}
+#squareStats {
+    position: relative;
+    left: 50%;
+    border-radius: 25px 25px 0px 0px;
+    transform: translate(-50%);
+    width: calc(300px + 25vw + 2px);
+    background-color: rgba(0,0,0,0.5);
+    height: 50px;
+    top: -51px;
+    border: solid 1px rgba(150,150,0,0.6);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+#squareWatch, #squareHintsLeft, #squareMoves {
+    position: relative;
+    overflow: hidden;
+    width: 33%;
+    height: 30px;
+    border-radius: 25px;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.5);
+    margin-top: 10px;
+    color: white;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic Coding';
+}
+#squareStats h6 {
+    position: absolute;
+    left: 7.5px;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 1em;
+    font-weight: 100;
+}
+#squareStats p {
+    position: absolute;
+    color: rgba(250,0,0,0.8);
+    right: 7.5px;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 1.3em;
+}
+#squareOptions {
+    position: relative;
+    left: 100%;
+    transform: translate(calc(-100% + 1px));
+    border-radius: 0px 0px 15px 15px;
+    width: calc(300px);
+    background-color: rgba(0,0,0,0.5);
+    height: 50px;
+    top: calc(100% - 50px);
+    border: solid 1px rgba(135, 150, 0, 0.418);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+#squareOptions div {
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+    color: white;
+    font-family: 'Nanum Gothic Coding';
+}
+#squareOptions div img {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: scale(1);
+}
+#squareOptions div img:hover {
+    transform: scale(1.1);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+#squareOptions div img:active {
+    transform: scale(0.9);
+}
+#squareAudioMenu {
+    position: relative;
+    width: 298px !important;
+    height: 125px !important;
+    transition: transform .5s, height .5s;
+    background-color: rgba(80, 80, 80, 0.5);
+    top: -175px;
+    left: -203px;
+    border-top-left-radius: 15px;
+    border-top: solid 1px rgba(0, 0, 255, 0.9);
+    border-left: solid 1px rgba(0,0,255,0.9);
+}
+.squareSettingOption {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+    left: 10px;
+    top: 10px;
+    margin: 20px 0;
+    color: white;
+    font-family: 'Nanum Gothic Coding';
+    font-size: 1em;
+}
+.squareSettingOption label {
+    position: absolute;
+    left: 10px;
+    margin-top: -5px;
+    margin-left: -7.5px;
+    width: 50px;
+}
+.squareSettingOption input[type="range"] {
+    -webkit-appearance: none;
+    position: relative;
+    width: 278px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-20px);
+    background-color: rgba(0,0,0);
+    border-radius: 25px;
+}
+.squareSettingOption input[type="range"]:hover {
+    opacity: 1;
+}
+.squareSettingOption input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(250,0,0,0.5);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+.squareSettingOption input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgba(250,0,0,0.5);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+.squareSettingOption input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 15px;
+    background: rgba(0,0,150,0.5);
+    border-radius: 25px;
+    border: 1px solid #000;
+}
+.squareSettingOption input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 15px;
+    background: rgba(0,0,150,0.5);
+    border-radius: 25px;
+    border: 1px solid #000;
+}
+.squareSettingOption input[type="button"] {
+    position: absolute;
+    right: -240px;
+    margin-top: -23px;
+    padding: 0;
+    font-weight: 100;
+    width: 100px;
+    height: 15px;
+    text-align: right;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 0.9em;
+}
+.squareSettingOption input[type="button"]:hover {
+    color: rgba(250,0,0,0.5);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+.squareSettingOption input[type="button"]:active {
+    color: rgba(150,0,0,0.5);
+}
+/* vertical-Canvas Styles */
+#verticalGameContainer {
+    position: relative;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    border: solid 1px rgba(150,0,150,0.7);
+    width: calc(300px + 13vw);
+    height: calc(300px + 25vw + 7.5vh);
+    border-radius: 0px 0px 0px 25px;
+}
+#verticalCanvas {
+    position: absolute;
+    display: grid;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.5);
+    border: solid 0.5px rgba(250,0,0,0.3);
+    width: 95%;
+    height: 95%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+}
+#verticalStats {
+    position: relative;
+    left: 50%;
+    border-radius: 25px 25px 0px 0px;
+    transform: translate(-50%);
+    width: calc(300px + 13vw + 2px);
+    background-color: rgba(0,0,0,0.5);
+    height: 50px;
+    top: -51px;
+    border: solid 1px rgba(150,150,0,0.6);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+#verticalWatch, #verticalHintsLeft, #verticalMoves {
+    position: relative;
+    overflow: hidden;
+    width: 33%;
+    height: 30px;
+    border-radius: 25px;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.5);
+    margin-top: 10px;
+    color: white;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic Coding';
+}
+#verticalStats h6 {
+    position: absolute;
+    left: 7.5px;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 1em;
+    font-weight: 100;
+}
+#verticalStats p {
+    position: absolute;
+    color: rgba(250,0,0,0.8);
+    right: 7.5px;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 1.3em;
+}
+#verticalOptions {
+    position: relative;
+    left: 100%;
+    transform: translate(calc(-100% + 1px));
+    border-radius: 0px 0px 15px 15px;
+    width: calc(300px);
+    background-color: rgba(0,0,0,0.5);
+    height: 50px;
+    top: calc(100% - 50px);
+    border: solid 1px rgba(135, 150, 0, 0.418);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+#verticalOptions div {
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+    color: white;
+    font-family: 'Nanum Gothic Coding';
+}
+#verticalOptions div img {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: scale(1);
+}
+#verticalOptions div img:hover {
+    transform: scale(1.1);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+#verticalOptions div img:active {
+    transform: scale(0.9);
+}
+#verticalAudioMenu {
+    position: relative;
+    width: 298px !important;
+    height: 125px !important;
+    transition: transform .5s, height .5s;
+    background-color: rgba(80, 80, 80, 0.5);
+    top: -175px;
+    left: -203px;
+    border-top-left-radius: 15px;
+    border-top: solid 1px rgba(0, 0, 255, 0.9);
+    border-left: solid 1px rgba(0,0,255,0.9);
+}
+.verticalSettingOption {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+    left: 10px;
+    top: 10px;
+    margin: 20px 0;
+    color: white;
+    font-family: 'Nanum Gothic Coding';
+    font-size: 1em;
+}
+.verticalSettingOption label {
+    position: absolute;
+    left: 10px;
+    margin-top: -5px;
+    margin-left: -7.5px;
+    width: 50px;
+}
+.verticalSettingOption input[type="range"] {
+    -webkit-appearance: none;
+    position: relative;
+    width: 278px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-20px);
+    background-color: rgba(0,0,0);
+    border-radius: 25px;
+}
+.verticalSettingOption input[type="range"]:hover {
+    opacity: 1;
+}
+.verticalSettingOption input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(250,0,0,0.5);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+.verticalSettingOption input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgba(250,0,0,0.5);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+.verticalSettingOption input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 15px;
+    background: rgba(0,0,150,0.5);
+    border-radius: 25px;
+    border: 1px solid #000;
+}
+.verticalSettingOption input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 15px;
+    background: rgba(0,0,150,0.5);
+    border-radius: 25px;
+    border: 1px solid #000;
+}
+.verticalSettingOption input[type="button"] {
+    position: absolute;
+    right: -240px;
+    margin-top: -23px;
+    padding: 0;
+    font-weight: 100;
+    width: 100px;
+    height: 15px;
+    text-align: right;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 0.9em;
+}
+.verticalSettingOption input[type="button"]:hover {
+    color: rgba(250,0,0,0.5);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+.verticalSettingOption input[type="button"]:active {
+    color: rgba(150,0,0,0.5);
+}
+/* horizontal-Canvas Styles */
+#horizontalGameContainer {
+    position: relative;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    border: solid 1px rgba(150,0,150,0.7);
+    width: calc(300px + 25vw + 15vh);
+    height: calc(300px + 12vw);
+    border-radius: 0px 0px 0px 25px;
+}
+#horizontalCanvas {
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.5);
+    border: solid 0.5px rgba(250,0,0,0.3);
+    width: 95%;
+    height: 95%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+}
+#horizontalStats {
+    position: relative;
+    left: 50%;
+    border-radius: 25px 25px 0px 0px;
+    transform: translate(-50%);
+    width: calc(300px + 25vw + 15vh);
+    background-color: rgba(0,0,0,0.5);
+    height: 50px;
+    top: -51px;
+    border: solid 1px rgba(150,150,0,0.6);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+#horizontalWatch, #horizontalHintsLeft, #horizontalMoves {
+    position: relative;
+    overflow: hidden;
+    width: 33%;
+    height: 30px;
+    border-radius: 25px;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.5);
+    margin-top: 10px;
+    color: white;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic Coding';
+}
+#horizontalStats h6 {
+    position: absolute;
+    left: 7.5px;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 1em;
+    font-weight: 100;
+}
+#horizontalStats p {
+    position: absolute;
+    color: rgba(250,0,0,0.8);
+    right: 7.5px;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 1.3em;
+}
+#horizontalOptions {
+    position: relative;
+    left: 100%;
+    transform: translate(calc(-100% + 1px));
+    border-radius: 0px 0px 15px 15px;
+    width: calc(300px);
+    background-color: rgba(0,0,0,0.5);
+    height: 50px;
+    top: calc(100% - 50px);
+    border: solid 1px rgba(135, 150, 0, 0.418);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+#horizontalOptions div {
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+    color: white;
+    font-family: 'Nanum Gothic Coding';
+}
+#horizontalOptions div img {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: scale(1);
+}
+#horizontalOptions div img:hover {
+    transform: scale(1.1);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+#horizontalOptions div img:active {
+    transform: scale(0.9);
+}
+#horizontalAudioMenu {
+    position: relative;
+    width: 298px !important;
+    height: 125px !important;
+    transition: transform .5s, height .5s;
+    background-color: rgba(80, 80, 80, 0.5);
+    top: -175px;
+    left: -203px;
+    border-top-left-radius: 15px;
+    border-top: solid 1px rgba(0, 0, 255, 0.9);
+    border-left: solid 1px rgba(0,0,255,0.9);
+}
+.horizontalSettingOption {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+    left: 10px;
+    top: 10px;
+    margin: 20px 0;
+    color: white;
+    font-family: 'Nanum Gothic Coding';
+    font-size: 1em;
+}
+.horizontalSettingOption label {
+    position: absolute;
+    left: 10px;
+    margin-top: -5px;
+    margin-left: -7.5px;
+    width: 50px;
+}
+.horizontalSettingOption input[type="range"] {
+    -webkit-appearance: none;
+    position: relative;
+    width: 278px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-20px);
+    background-color: rgba(0,0,0);
+    border-radius: 25px;
+}
+.horizontalSettingOption input[type="range"]:hover {
+    opacity: 1;
+}
+.horizontalSettingOption input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(250,0,0,0.5);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+.horizontalSettingOption input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgba(250,0,0,0.5);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+.horizontalSettingOption input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 15px;
+    background: rgba(0,0,150,0.5);
+    border-radius: 25px;
+    border: 1px solid #000;
+}
+.horizontalSettingOption input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 15px;
+    background: rgba(0,0,150,0.5);
+    border-radius: 25px;
+    border: 1px solid #000;
+}
+.horizontalSettingOption input[type="button"] {
+    position: absolute;
+    right: -240px;
+    margin-top: -23px;
+    padding: 0;
+    font-weight: 100;
+    width: 100px;
+    height: 15px;
+    text-align: right;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 0.9em;
+}
+.horizontalSettingOption input[type="button"]:hover {
+    color: rgba(250,0,0,0.5);
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+.horizontalSettingOption input[type="button"]:active {
+    color: rgba(150,0,0,0.5);
+}
+@media screen and (max-width: 550px) {
+    #horizontalGameContainer {
+        width: calc(300px + 25vw);
+        height: calc(300px - 5vh);
+    }
+    #horizontalStats {
+        width: calc(300px + 25vw);
+    }
+}
+/* Cell Styles */
+.gameCell {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    cursor: url("/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/cursor/pointer.png") 9 3, auto;
+}
+.gameCell.style_1_on {
+    background-image: url('/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/light_modes/style_1/on.png');
+    background-size: cover;
+}
+.gameCell.style_1_off {
+    background-image: url('/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/light_modes/style_1/off.png');
+    background-size: cover;
+}
+.gameCell.style_2_on {
+    background-image: url('/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/light_modes/style_2/on.png');
+    background-size: cover;
+}
+.gameCell.style_2_off {
+    background-image: url('/games/projekte/001.light-logic-game/game_versions/version_full_1.0/assets/images/light_modes/style_2/off.png');
+    background-size: cover;
+}
